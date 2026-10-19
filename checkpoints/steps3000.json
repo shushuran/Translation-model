@@ -1,0 +1,133 @@
+{
+  "run_name": "steps3000",
+  "steps": 3000,
+  "data_config": {
+    "n_train": 4000,
+    "n_dev": 400,
+    "n_test": 400,
+    "batch_size": 32,
+    "pad_variant_prob": 0.5,
+    "include_weekday": false,
+    "train_years": [
+      1000,
+      5799
+    ],
+    "dev_years": [
+      5800,
+      5899
+    ],
+    "test_years": [
+      5900,
+      5999
+    ],
+    "seed": 0
+  },
+  "model_config": {
+    "src_emb_dim": 64,
+    "tgt_emb_dim": 64,
+    "hidden_dim": 128,
+    "attn_dim": 128,
+    "attn_type": "bahdanau",
+    "bidirectional": false,
+    "decoder_output": "s_c",
+    "decoder_init": "bridge",
+    "init_scale": 0.08
+  },
+  "train_config": {
+    "max_steps": 3000,
+    "lr": 0.002,
+    "beta1": 0.9,
+    "beta2": 0.999,
+    "eps": 1e-08,
+    "grad_clip": 5.0,
+    "teacher_forcing": 1.0,
+    "log_every": 200,
+    "eval_every": 200,
+    "seed": 0
+  },
+  "src_itos": [
+    "<pad>",
+    "<bos>",
+    "<eos>",
+    "<unk>",
+    "1",
+    "2",
+    "0",
+    "年",
+    "日",
+    "月",
+    "3",
+    "4",
+    "5",
+    "7",
+    "6",
+    "8",
+    "9"
+  ],
+  "tgt_itos": [
+    "<pad>",
+    "<bos>",
+    "<eos>",
+    "<unk>",
+    "/",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "7",
+    "0",
+    "6",
+    "8",
+    "9",
+    "December",
+    "April",
+    "July",
+    "January",
+    "October",
+    "June",
+    "May",
+    "March",
+    "August",
+    "November",
+    "September",
+    "February"
+  ],
+  "max_len": 12,
+  "metrics": {
+    "train_tf": {
+      "loss": 0.0001707785499954825,
+      "token_acc": 1.0,
+      "seq_acc": 1.0,
+      "n_seq": 4000
+    },
+    "train_ar": {
+      "token_acc": 1.0,
+      "seq_acc": 1.0,
+      "n_seq": 4000
+    },
+    "dev_tf": {
+      "loss": 0.0007530293256338487,
+      "token_acc": 1.0,
+      "seq_acc": 1.0,
+      "n_seq": 400
+    },
+    "dev_ar": {
+      "token_acc": 1.0,
+      "seq_acc": 1.0,
+      "n_seq": 400
+    },
+    "test_tf": {
+      "loss": 0.00022993153932891958,
+      "token_acc": 1.0,
+      "seq_acc": 1.0,
+      "n_seq": 400
+    },
+    "test_ar": {
+      "token_acc": 1.0,
+      "seq_acc": 1.0,
+      "n_seq": 400
+    }
+  },
+  "elapsed": 574.6915643
+}
